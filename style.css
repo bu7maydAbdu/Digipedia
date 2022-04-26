@@ -4,11 +4,9 @@
 }
 
 
-/* body {
-    background-image: url(./imgz/29_digimon.jpg);
-    background-position: center;
-    background-size: auto;
-} */
+body {
+  display: flex;
+}
 
 
 
@@ -35,15 +33,25 @@
     background-color: white;
     left: 0px;
     border-radius: 0;
+    padding-left: 2%;
     overflow: scroll;
 }
+
+/* .background-logo{
+    position: sticky;
+    z-index: 1000;
+    width: 400px;
+    height: 300px;
+    top: 30%;
+    left: 20%;
+    opacity: 0.1;
+} */
 
 
 #one-card-review{
     position: relative;
     width: 50vw;
     height: 100vh;
-    background-color: black;
 }
 .hidden-stage{
     display: none;
@@ -60,7 +68,7 @@
     /* background-color: white; */
     background-color: brown;
     box-shadow: 5px 10px 8px #888888;
-    animation-duration: 0.5s;
+    animation-duration: 2s;
     animation-name: popIn;
 }
  @keyframes popIn {
@@ -77,6 +85,7 @@
     right: 25%;  
     top: 30%;
     left: 15vw;
+    margin: auto;
 }
 
 .hidden-card {
@@ -106,6 +115,7 @@
 
 
 #search-bar {
+    display: flex;
     position: absolute;
     z-index: 1000;
     border: none;
@@ -158,3 +168,43 @@ audio {
     position: absolute;
     z-index: 10001;
 }
+
+
+
+
+
+/* media queries section  */
+
+
+@media screen and (max-width: 1470px) {
+   .grid-page {
+       grid-template-columns: 1fr 1fr;
+   }
+   .card-position {
+       left: 10vw;
+   }
+  }
+
+  @media screen and (max-width: 1252px) {
+    #search-bar {
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+    }
+    .buttons-section {
+        margin: auto;
+    }
+   }
+
+
+
+   @media screen and (max-width: 880px) {
+    .grid-page{
+        grid-template-columns: 1fr;
+    }
+   
+   }
+
+   
+ 
+  

@@ -51,6 +51,8 @@ getAllButton.addEventListener("click", fetchAll)
 
 function fetchAll(){
 
+  oneCardStage.classList.add("hidden-stage")
+
     const gridSection = document.querySelector("#main-section")
     gridSection.classList.add("grid-page")
 
