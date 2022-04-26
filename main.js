@@ -1,11 +1,25 @@
-const getButton = document.querySelector("#call-one")
-getButton.addEventListener("click", getFetch)
+const getOneButton = document.querySelector("#call-one")
+getOneButton.addEventListener("click", getFetch)
+
+const audio = document.querySelector("#digiAudio")
+
 
 const monsterCard = document.querySelector(".card")
 
 monsterCard.classList.add("hidden-card")
 
+const oneCardStage = document.querySelector("#one-card-review")
+
+
 function getFetch(){
+    audio.play()
+
+    oneCardStage.classList.remove("hidden-stage")// continue developing later
+
+    // monsterCard.classList.add("hidden-card")
+    const gridSection = document.querySelector("#main-section")
+    gridSection.classList.remove("grid-page")
+
 
     const digiName = document.querySelector("input").value
 
@@ -26,4 +40,60 @@ function getFetch(){
 
 }
 
+
+
+// this here is the part of the get all the digi  through looping all over the arrays 
+
+const getAllButton = document.querySelector("#call-all")
+
+getAllButton.addEventListener("click", fetchAll)
+
+
+function fetchAll(){
+
+    const gridSection = document.querySelector("#main-section")
+    gridSection.classList.add("grid-page")
+
+
+    monsterCard.classList.add("hidden-card")
+
+    const url = `https://digimon-api.vercel.app/api/digimon`
+    fetch(url)
+          .then(res => res.json()) // parse response as JSON
+          .then(data => {
+            console.log(data)
+            data.map(element => {
+
+              const createCard = document.createElement("section")
+              createCard.classList.add("card", "smaller-card")
+              const monsterName = document.createElement("h2")
+              monsterName.textContent = element.name
+              const monsterLevel = document.createElement("h3")
+              monsterLevel.textContent = element.level
+              const monsterImg = document.createElement("img")
+              monsterImg.src = element.img
+              document.querySelector("#main-section").appendChild(createCard)
+              createCard.appendChild(monsterName)
+              createCard.appendChild(monsterLevel)
+              createCard.appendChild(monsterImg)
+
+              monsterImg.classList.add("monster-img")
+
+
+               
+                
+
+               
+          
+
+
+            });
+          })
+          .catch(err => {
+              console.log(`error ${err}`)
+          });
+
+
+
+}
 

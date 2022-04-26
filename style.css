@@ -11,6 +11,15 @@
 } */
 
 
+
+.grid-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
+    width: 50vw;
+}
+
+
 #background-img {
     position: fixed;
     width: 100vw;
@@ -26,33 +35,68 @@
     background-color: white;
     left: 0px;
     border-radius: 0;
+    overflow: scroll;
+}
+
+
+#one-card-review{
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+    background-color: black;
+}
+.hidden-stage{
+    display: none;
 }
 .card {
     position: absolute;
     border: none;
     border-radius: 25px;
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     display: flex;
     text-align: center;
-    right: 25%;  
-    top: 30%;
-    left: 10vw;
+    z-index: 10002;
     /* background-color: white; */
     background-color: brown;
     box-shadow: 5px 10px 8px #888888;
-
+    animation-duration: 0.5s;
+    animation-name: popIn;
 }
+ @keyframes popIn {
+    from{
+        transform: scale(0.5);
+    }
+    to{
+        transform: scale(1);
+    }
+} 
 
+.card-position {
+    /* position: absolute; */
+    right: 25%;  
+    top: 30%;
+    left: 15vw;
+}
 
 .hidden-card {
     display: none;
 }
 
-img {
+
+.smaller-card {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 10px 10px;
+}
+.smaller-card:hover {
+    transform: scale(1.1);
+}
+.monster-img {
     position: absolute;
-    top: 10px;
-    right: 45px;
+    top: 5%;
+    right: 10%;
     width: 70%;
     height: 70%;
     border-radius: 25px;
@@ -79,6 +123,10 @@ button {
     padding: 10px;
     border: none;
     border-radius: 25px;
+    background: linear-gradient(0deg, rgba(255,197,0,1) 0%, rgba(212,134,32,1) 46%, rgba(159,112,58,0.8099614845938375) 100%);
+    color: white;
+    cursor: pointer;
+    outline: none;
 }
 
 h2 {
@@ -90,7 +138,8 @@ h2 {
     color: brown;
     width: 100%;
     height: 20%;
-    font-size: 50px;
+    font-size: 1.8rem;
+    z-index: 10001;
 }
 h3 {
 
@@ -102,4 +151,10 @@ h3 {
     color: orange;
     height: 100%;
     border-radius: 25px 0 0 25px;
+}
+
+
+audio {
+    position: absolute;
+    z-index: 10001;
 }
