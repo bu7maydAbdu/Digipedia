@@ -2,7 +2,7 @@ const getOneButton = document.querySelector("#call-one")
 getOneButton.addEventListener("click", getFetch)
 
 const audio = document.querySelector("#digiAudio")
-const AuddigiAssemmbleio = document.querySelector("#digiAssemmbleAudio")
+const digiAssemmbleAudio = document.querySelector("#digiAssemmbleAudio")
 
 
 const monsterCard = document.querySelector(".card")
@@ -14,6 +14,7 @@ const oneCardStage = document.querySelector("#one-card-review")
 
 function getFetch(){
     audio.play()
+    digiAssemmbleAudio.pause()
 
     oneCardStage.classList.remove("hidden-stage")// continue developing later
 
@@ -52,6 +53,7 @@ getAllButton.addEventListener("click", fetchAll)
 
 function fetchAll(){
   digiAssemmbleAudio.play()
+  audio.pause()
 
   oneCardStage.classList.add("hidden-stage")
 
