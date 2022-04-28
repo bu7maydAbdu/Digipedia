@@ -253,7 +253,12 @@ audio {
 
 .grid-page {
     grid-template-columns: 1fr 1fr 1fr;
-  
+    
+    
+}
+
+.smaller-card {
+    left: 5%;
 }
 
 
