@@ -214,7 +214,7 @@ audio {
         #background-img {
             position: relative;
             width: 100vw;
-            height: 40vh;
+            height: 35vh;
             top: 0;
             right: 0%;
             border-radius: 0px;
@@ -225,7 +225,7 @@ audio {
            /* background-color: black; */
            margin-top: -4px;
            width: 98vw;     
-           height: 60vh;       
+           height: 65vh;       
         }
 
         #one-card-review{
