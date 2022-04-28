@@ -1,6 +1,9 @@
 const getOneButton = document.querySelector("#call-one")
 getOneButton.addEventListener("click", getFetch)
 
+
+
+
 const audio = document.querySelector("#digiAudio")
 const digiAssemmbleAudio = document.querySelector("#digiAssemmbleAudio")
 
@@ -10,16 +13,24 @@ const monsterCard = document.querySelector(".card")
 monsterCard.classList.add("hidden-card")
 
 const oneCardStage = document.querySelector("#one-card-review")
+const gridSection = document.querySelector("#main-section")
+
 
 
 function getFetch(){
     audio.play()
     digiAssemmbleAudio.pause()
 
-    oneCardStage.classList.remove("hidden-stage")// continue developing later
+
+
+    oneCardStage.classList.remove("hidden-stage")
+
+   
 
     // monsterCard.classList.add("hidden-card")
-    const gridSection = document.querySelector("#main-section")
+    // const gridSection = document.querySelector("#main-section")
+    gridSection.classList.add("hidden-stage")
+
     gridSection.classList.remove("grid-page")
 
 
@@ -55,9 +66,12 @@ function fetchAll(){
   digiAssemmbleAudio.play()
   audio.pause()
 
+
+
   oneCardStage.classList.add("hidden-stage")
 
-    const gridSection = document.querySelector("#main-section")
+
+    gridSection.classList.remove("hidden-stage")
     gridSection.classList.add("grid-page")
 
 
