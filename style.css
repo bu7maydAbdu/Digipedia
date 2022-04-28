@@ -34,7 +34,7 @@ body {
     left: 0px;
     border-radius: 0;
     padding-left: 2%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 /* .background-logo{
